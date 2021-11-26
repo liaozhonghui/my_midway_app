@@ -1,8 +1,12 @@
-import { Provide } from '@midwayjs/decorator';
+import { Inject, Provide } from '@midwayjs/decorator';
 import { IUserOptions } from '../interface';
+import { RedisService } from '@midwayjs/redis';
 
 @Provide()
 export class UserService {
+  @Inject()
+  redisService: RedisService;
+
   async getUser(options: IUserOptions) {
     return {
       uid: options.uid,
@@ -10,5 +14,9 @@ export class UserService {
       phone: '12345678901',
       email: 'xxx.xxx@xxx.com',
     };
+  }
+
+  async incrOne() {
+    await this.redisService.incr('user::count');
   }
 }

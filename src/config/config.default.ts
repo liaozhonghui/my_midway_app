@@ -16,10 +16,17 @@ export default (appInfo: EggAppInfo) => {
     // false 或者为空代表使用 egg-logger
     replaceEggLogger: true,
   };
-
-  // config.security = {
-  //   csrf: false,
-  // };
+  config.redis = {
+    client: {
+      port: 6379,
+      host: '127.0.0.1',
+      password: null,
+      db: null,
+    }
+  };
+  config.security = {
+    csrf: false,
+  };
 
   return config;
 };
