@@ -9,8 +9,10 @@
     "@midwayjs/decorator": "^2.3.0",
     "@midwayjs/redis": "^2.13.4",
     "@midwayjs/web": "^2.3.0",
+    "@types/lodash": "^4.14.177",
     "egg": "^2.0.0",
     "egg-scripts": "^2.10.0",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1"
   },
   "devDependencies": {
