@@ -12,6 +12,7 @@
     "@types/lodash": "^4.14.177",
     "egg": "^2.0.0",
     "egg-scripts": "^2.10.0",
+    "koa-static": "^5.0.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1"
   },
