@@ -3,6 +3,7 @@ import { ILifeCycle } from '@midwayjs/core';
 import { Application } from 'egg';
 import { join } from 'path';
 import * as redis from '@midwayjs/redis';
+import * as staticCache from 'koa-static-cache';
 
 @Configuration({
   imports: [
@@ -17,5 +18,13 @@ export class ContainerLifeCycle implements ILifeCycle {
 
   async onReady() {
     this.app.use(await this.app.generateMiddleware('reportMiddleware'));
+    this.app.use(staticCache({
+      prefix: '/public/',
+      dir: join(__dirname, '../public'),
+      dynamic: true,
+      preload: false,
+      buffer: true,
+      maxFiles: 1000
+    }));
   }
 }

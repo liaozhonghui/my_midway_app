@@ -1,0 +1,6 @@
+service: my_midway_app
+
+provider:
+  name: aliyun
+
+deployType: egg ## 部署的应用类型
